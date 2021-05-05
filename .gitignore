@@ -40,3 +40,5 @@ Thumbs.db
 
 apps/*/bin
 apps/*/obj
+apps/*/bin
+apps/*/obj
