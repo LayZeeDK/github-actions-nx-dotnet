@@ -16,6 +16,7 @@
       "testTemplate": "xunit"
     }
   },
+  "defaultProject": "my-web-api",
   "projects": {
     "my-web-api": {
       "root": "apps/my-web-api",

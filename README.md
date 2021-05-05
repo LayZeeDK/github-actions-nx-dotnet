@@ -49,7 +49,10 @@ json -I -f workspace.json -e "this.generators = { '@nx-dotnet/core:app': { langu
 ## Create web API project
 
 ```powershell
+# Generate web API and testing projects
 nx generate app my-web-api
+# Tag testing project with "type:test"
+json -I -f nx.json -e "this.projects['my-web-api-test'].tags = ['type:test'].concat(this.projects['my-web-api-test'].tags.slice(1));"
 ```
 
 ## Generate GitHub Actions CI workflow
