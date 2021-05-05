@@ -1,3 +1,5 @@
+Nx workspace using nx-dotnet. Contains a GitHub Actions CI workflow.
+
 # How to generate this workspace
 
 ## Prerequisites
