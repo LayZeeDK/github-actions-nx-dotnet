@@ -28,10 +28,10 @@ jobs:
       DOTNET_GENERATE_ASPNET_CERTIFICATE: false
       DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
       DOTNET_MULTILEVEL_LOOKUP: 0
-    defaults:
-      run:
-        shell: pwsh
-        working-directory: ./
+    # defaults:
+    #   run:
+    #     shell: pwsh
+    #     working-directory: ./
 
     steps:
       - uses: actions/checkout@v2
