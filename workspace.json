@@ -1,11 +1,18 @@
 {
   "version": 2,
-  "cli": { "defaultCollection": "@nx-dotnet/core" },
+  "cli": {
+    "defaultCollection": "@nx-dotnet/core"
+  },
   "generators": {
     "@nx-dotnet/core:app": {
       "language": "C#",
       "tags": "type:api",
       "template": "webapi",
+      "testTemplate": "xunit"
+    },
+    "@nx-dotnet/core:lib": {
+      "language": "C#",
+      "template": "classlib",
       "testTemplate": "xunit"
     }
   },
@@ -22,12 +29,22 @@
             "output": "dist/apps/my-web-api",
             "configuration": "Debug"
           },
-          "configurations": { "production": { "configuration": "Release" } }
+          "configurations": {
+            "production": {
+              "configuration": "Release"
+            }
+          }
         },
         "serve": {
           "executor": "@nx-dotnet/core:serve",
-          "options": { "configuration": "Debug" },
-          "configurations": { "production": { "configuration": "Release" } }
+          "options": {
+            "configuration": "Debug"
+          },
+          "configurations": {
+            "production": {
+              "configuration": "Release"
+            }
+          }
         }
       }
     },
@@ -43,9 +60,16 @@
             "output": "dist/apps/my-web-api-test",
             "configuration": "Debug"
           },
-          "configurations": { "production": { "configuration": "Release" } }
+          "configurations": {
+            "production": {
+              "configuration": "Release"
+            }
+          }
         },
-        "test": { "executor": "@nx-dotnet/core:test", "options": {} }
+        "test": {
+          "executor": "@nx-dotnet/core:test",
+          "options": {}
+        }
       }
     }
   }
