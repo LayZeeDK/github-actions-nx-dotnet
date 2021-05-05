@@ -65,3 +65,26 @@ dotnet new -i TimHeuer.GitHubActions.Templates::1.0.5
 # Generate GitHub Actions CI workflow
 dotnet new workflow
 ```
+
+## Use Nx for Build job
+
+1. Remove the _Restore_ step from `.github/workflows/github-actions-nx-dotnet.yaml`.
+1. Add _Setup Node.js_ step after _Setup .NET Core SDK_ step:
+   ```yml
+   - name: Setup Node.js
+     uses: actions/setup-node@v1
+     with:
+       node-version: 14.x
+   - name: Install PNPM
+     run: npm install --global pnpm
+   - name: Install Nx dependencies
+     run: pnpm install
+   ```
+1. Change the `run` command of the _Build_ step to:
+   ```
+   pnpm build
+   ```
+1. Change the `run` command of the _Test_ step to:
+   ```
+   pnpm test
+   ```
