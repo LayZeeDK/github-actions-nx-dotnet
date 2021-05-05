@@ -3,5 +3,13 @@
   "cli": {
     "defaultCollection": "@nx-dotnet/core"
   },
+  "generators": {
+    "@nx-dotnet/core:app": {
+      "language": "C#",
+      "tags": "type:api",
+      "template": "webapi",
+      "testTemplate": "xunit"
+    }
+  },
   "projects": {}
 }
