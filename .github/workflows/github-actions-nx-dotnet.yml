@@ -46,7 +46,7 @@ jobs:
         with:
           node-version: 14.x
       - name: Install PNPM
-        run: yarn global add pnpm
+        run: npm install --global pnpm
       - name: Install Nx dependencies
         run: pnpm install
 
