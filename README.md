@@ -53,6 +53,8 @@ json -I -f workspace.json -e "this.generators = { '@nx-dotnet/core:app': { langu
 nx generate app my-web-api
 # Tag testing project with "type:test"
 json -I -f nx.json -e "this.projects['my-web-api-test'].tags = ['type:test'].concat(this.projects['my-web-api-test'].tags.slice(1));"
+# Set my-web-api as default Nx project
+json -I -f workspace.json -e "this.defaultProject = 'my-web-api';"
 ```
 
 ## Generate GitHub Actions CI workflow
